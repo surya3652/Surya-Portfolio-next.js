@@ -16,7 +16,7 @@ const config: Config = {
         "extra-medium-gray": "#999",
       },
       fontFamily: {
-        primary: ["var(--font-quicksand)", "sans-serif"],
+        primary: ["var(--font-inter)", "sans-serif"],
       },
       fontSize: {
         "335": "20.938rem",
