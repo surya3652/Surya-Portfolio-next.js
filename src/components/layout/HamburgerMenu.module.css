@@ -1,0 +1,114 @@
+/* Hamburger Menu Styles */
+
+.hamburgerButton {
+  @apply fixed top-[40px] right-[50px] z-[1001] bg-transparent border-none cursor-pointer p-0 md:top-[30px] md:right-[30px] sm:top-[20px] sm:right-[20px];
+}
+
+.pushButton {
+  @apply h-[8px] w-[25px] flex flex-col justify-between;
+}
+
+.pushButton span {
+  @apply block w-[25px] h-[2px] bg-white transition-all duration-300 ease-in-out;
+}
+
+.pushButton span:first-child {
+  @apply w-[15px];
+}
+
+.pushButton.open span:first-child {
+  @apply rotate-45 translate-y-[6px] w-[25px];
+}
+
+.pushButton.open span:nth-child(2) {
+  @apply -rotate-45 -translate-y-[6px];
+}
+
+/* Backdrop */
+.backdrop {
+  @apply fixed inset-0 bg-black/50 z-[9998];
+}
+
+/* Menu Panel */
+.menuPanel {
+  @apply fixed top-0 right-0 h-full w-[500px] bg-dark-gray z-[9999] p-[80px_60px] overflow-y-auto
+    lg:w-[450px] lg:p-[70px_50px]
+    md:w-[400px] md:p-[60px_40px]
+    sm:w-full sm:p-[60px_30px];
+}
+
+/* Close Button */
+.closeButton {
+  @apply absolute top-[40px] right-[50px] text-white text-[24px] bg-transparent border-none cursor-pointer 
+    transition-transform duration-200 hover:scale-110
+    md:top-[30px] md:right-[30px]
+    sm:top-[20px] sm:right-[20px];
+}
+
+/* Menu Content */
+.menuContent {
+  @apply flex flex-col justify-between h-full;
+}
+
+/* Menu List */
+.menuList {
+  @apply list-none p-0 m-0;
+}
+
+.menuItem {
+  @apply mb-[20px];
+}
+
+.menuLink {
+  @apply text-white text-[40px] font-bold leading-[1.2] no-underline relative inline-block
+    transition-colors duration-300
+    hover:text-base-color
+    lg:text-[36px]
+    md:text-[32px]
+    sm:text-[28px];
+}
+
+.menuLink::after {
+  @apply content-[''] absolute left-0 bottom-[-5px] w-0 h-[2px] bg-base-color 
+    transition-all duration-300;
+}
+
+.menuLink:hover::after {
+  @apply w-full;
+}
+
+/* Contact Info */
+.contactInfo {
+  @apply mt-[60px] flex flex-col gap-[40px]
+    md:mt-[40px] md:gap-[30px];
+}
+
+.contactBlock {
+  @apply text-white;
+}
+
+.contactTitle {
+  @apply text-[16px] uppercase font-semibold tracking-[1px] mb-[15px] text-white/70;
+}
+
+.divider {
+  @apply h-[1px] bg-white/20 mb-[15px];
+}
+
+.contactText {
+  @apply text-[15px] leading-[1.6] text-white/90 m-0;
+}
+
+.contactText a {
+  @apply text-white no-underline transition-colors duration-300 hover:text-base-color;
+}
+
+/* Social Links */
+.socialLinks {
+  @apply flex gap-[15px] mt-[10px];
+}
+
+.socialLink {
+  @apply text-white text-[20px] no-underline transition-all duration-300
+    hover:text-base-color hover:scale-110;
+}

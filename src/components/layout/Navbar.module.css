@@ -1,0 +1,75 @@
+/* Navbar Styles - Simplified to match original template */
+
+.navbar {
+  @apply fixed top-0 left-0 right-0 z-[999] bg-transparent;
+  transition: background-color 0.3s ease;
+}
+
+.navbarContent {
+  @apply flex items-center justify-between py-4;
+}
+
+.logoWrapper {
+  @apply flex-shrink-0;
+}
+
+.logo {
+  @apply text-white no-underline;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  @apply opacity-80;
+}
+
+.logoText {
+  @apply text-2xl font-bold;
+}
+
+.headerIcon {
+  @apply flex items-center gap-6;
+}
+
+.email {
+  @apply text-white no-underline hidden lg:block;
+  transition: opacity 0.3s ease;
+}
+
+.email:hover {
+  @apply opacity-80;
+}
+
+.hamburgerButton {
+  @apply bg-transparent border-none cursor-pointer p-0;
+}
+
+.pushButton {
+  @apply relative flex flex-col gap-[6px];
+  height: 8px;
+  width: 30px;
+}
+
+.pushButton span {
+  @apply block bg-white;
+  height: 2px;
+  transition: all 0.3s ease;
+}
+
+.pushButton span:first-child {
+  width: 15px;
+}
+
+.pushButton span:nth-child(2) {
+  width: 30px;
+}
+
+.pushButton.active span:first-child {
+  @apply rotate-45;
+  transform-origin: left center;
+  width: 15px;
+}
+
+.pushButton.active span:nth-child(2) {
+  @apply -rotate-45;
+  transform-origin: left center;
+}
