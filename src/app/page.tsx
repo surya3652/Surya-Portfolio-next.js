@@ -4,9 +4,9 @@ import CustomCursor from "@/components/shared/CustomCursor";
 import ScrollProgress from "@/components/shared/ScrollProgress";
 import MarqueeText from "@/components/shared/MarqueeText";
 import Hero from "@/sections/Hero/Hero";
-import AboutNew from "@/sections/About/AboutNew";
+import About from "@/sections/About/About";
 import Projects from "@/sections/Projects/Projects";
-import SkillsNew from "@/sections/Skills/SkillsNew";
+import Skills from "@/sections/Skills/Skills";
 import Achievements from "@/sections/Achievements/Achievements";
 import Contact from "@/sections/Contact/Contact";
 
@@ -33,7 +33,7 @@ export default function Home() {
         <Hero />
         
         {/* About Section */}
-        <AboutNew />
+        <About />
         
         {/* Marquee Text 1 */}
         <MarqueeText items={marqueeItems1} speed={40} />
@@ -42,7 +42,7 @@ export default function Home() {
         <Projects />
         
         {/* Skills Section */}
-        <SkillsNew />
+        <Skills />
         
         {/* Marquee Text 2 */}
         <MarqueeText items={marqueeItems2} speed={50} reverse />
