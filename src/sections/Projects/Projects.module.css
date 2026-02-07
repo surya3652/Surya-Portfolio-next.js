@@ -1,0 +1,33 @@
+/* Projects Section Styles - Complex styles only */
+
+.filterButton {
+  padding: 12px 30px;
+  background-color: white;
+  color: var(--dark-gray);
+  border: 2px solid #d1d5db;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  border-color: var(--base-color);
+  color: var(--base-color);
+}
+
+.filterButton.active {
+  background-color: var(--base-color);
+  color: white;
+  border-color: var(--base-color);
+}
+
+@media (max-width: 768px) {
+  .filterButton {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+}

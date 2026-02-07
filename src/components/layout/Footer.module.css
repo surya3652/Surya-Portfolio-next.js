@@ -1,103 +1,38 @@
 /* Footer Styles */
 
-.footer {
-  @apply bg-dark-gray text-white py-[80px] relative
-    md:py-[60px];
-}
-
-/* Content */
-.content {
-  @apply grid grid-cols-3 gap-[60px] mb-[60px]
-    lg:gap-[40px]
-    md:grid-cols-1 md:gap-[40px] md:mb-[40px];
-}
-
 /* Brand */
-.brand {
-  @apply space-y-[20px];
-}
-
 .logo {
-  @apply text-[32px] font-bold text-white no-underline inline-block mb-[15px]
-    transition-colors duration-300 hover:text-base-color
-    md:text-[28px];
+  transition: color 0.3s ease;
 }
 
-.description {
-  @apply text-[15px] text-white/70 leading-[1.7] max-w-[300px]
-    md:text-[14px];
-}
-
-.socialLinks {
-  @apply flex gap-[15px];
+.logo:hover {
+  color: var(--base-color);
 }
 
 .socialLink {
-  @apply w-[40px] h-[40px] rounded-full bg-white/10 flex items-center justify-center
-    text-white text-[18px] no-underline transition-all duration-300
-    hover:bg-base-color hover:scale-110;
+  transition: all 0.3s ease;
 }
 
-/* Links Section */
-.linksSection {
-  @apply space-y-[20px];
+.socialLink:hover {
+  background-color: var(--base-color);
+  transform: scale(1.1);
 }
 
-.linksTitle {
-  @apply text-[18px] font-bold text-white mb-[20px]
-    md:text-[16px];
-}
-
-.linksList {
-  @apply flex flex-col gap-[12px];
-}
-
+/* Links */
 .link {
-  @apply text-[15px] text-white/70 no-underline transition-colors duration-300
-    hover:text-base-color hover:pl-[5px]
-    md:text-[14px];
+  transition: all 0.3s ease;
 }
 
-/* Contact Section */
-.contactSection {
-  @apply space-y-[20px];
+.link:hover {
+  color: var(--base-color);
+  padding-left: 5px;
 }
 
-.contactTitle {
-  @apply text-[18px] font-bold text-white mb-[20px]
-    md:text-[16px];
-}
-
-.contactInfo {
-  @apply flex flex-col gap-[15px];
-}
-
+/* Contact Item */
 .contactItem {
-  @apply flex items-center gap-[12px] text-[15px] text-white/70 no-underline
-    transition-colors duration-300 hover:text-base-color
-    md:text-[14px];
+  transition: color 0.3s ease;
 }
 
-.contactItem i {
-  @apply text-[18px] text-base-color;
-}
-
-/* Bottom Bar */
-.bottom {
-  @apply flex justify-between items-center pt-[40px] border-t border-white/10
-    md:flex-col md:gap-[15px] md:text-center md:pt-[30px];
-}
-
-.copyright {
-  @apply text-[14px] text-white/60
-    md:text-[13px];
-}
-
-.credits {
-  @apply text-[14px] text-white/60
-    md:text-[13px];
-}
-
-.heart {
-  @apply text-base-color inline-block mx-[4px];
+.contactItem:hover {
+  color: var(--base-color);
 }

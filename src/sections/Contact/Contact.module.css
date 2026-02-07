@@ -1,0 +1,120 @@
+/* Contact Section Styles - Complex hover states only */
+
+.infoCard {
+  background-color: #f9fafb;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  background-color: var(--base-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.infoIcon {
+  font-size: 40px;
+  color: var(--base-color);
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.infoCard:hover .infoIcon {
+  color: white;
+}
+
+.infoTitle {
+  font-size: 14px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.infoCard:hover .infoTitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.infoValue {
+  font-size: 16px;
+  color: var(--dark-gray);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.infoCard:hover .infoValue {
+  color: white;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background-color: #f3f4f6;
+  color: var(--dark-gray);
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: var(--base-color);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--base-color);
+  color: white;
+  padding: 20px 50px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: var(--dark-gray);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+.ctaButton i {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover i {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .infoCard {
+    padding: 25px;
+  }
+  .infoIcon {
+    font-size: 36px;
+  }
+  .infoValue {
+    font-size: 15px;
+  }
+  .socialLink {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .ctaButton {
+    padding: 18px 40px;
+    font-size: 15px;
+  }
+}

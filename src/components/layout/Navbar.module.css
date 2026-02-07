@@ -1,58 +1,97 @@
 /* Navbar Styles - Simplified to match original template */
 
 .navbar {
-  @apply fixed top-0 left-0 right-0 z-[999] bg-transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9998;
+  background-color: transparent;
   transition: background-color 0.3s ease;
+  padding: 20px 0;
 }
 
 .navbarContent {
-  @apply flex items-center justify-between py-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
 }
 
 .logoWrapper {
-  @apply flex-shrink-0;
+  flex-shrink: 0;
 }
 
 .logo {
-  @apply text-white no-underline;
+  color: white;
+  text-decoration: none;
   transition: opacity 0.3s ease;
+  display: inline-block;
 }
 
 .logo:hover {
-  @apply opacity-80;
+  opacity: 0.8;
 }
 
 .logoText {
-  @apply text-2xl font-bold;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .headerIcon {
-  @apply flex items-center gap-6;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-shrink: 0;
 }
 
 .email {
-  @apply text-white no-underline hidden lg:block;
+  color: white;
+  text-decoration: none;
   transition: opacity 0.3s ease;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .email:hover {
-  @apply opacity-80;
+  opacity: 0.8;
+}
+
+@media (max-width: 991px) {
+  .email {
+    display: none;
+  }
 }
 
 .hamburgerButton {
-  @apply bg-transparent border-none cursor-pointer p-0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pushButton {
-  @apply relative flex flex-col gap-[6px];
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   height: 8px;
   width: 30px;
 }
 
 .pushButton span {
-  @apply block bg-white;
+  display: block;
+  background-color: white;
   height: 2px;
   transition: all 0.3s ease;
+  border-radius: 1px;
 }
 
 .pushButton span:first-child {
@@ -64,12 +103,25 @@
 }
 
 .pushButton.active span:first-child {
-  @apply rotate-45;
+  transform: rotate(45deg);
   transform-origin: left center;
   width: 15px;
 }
 
 .pushButton.active span:nth-child(2) {
-  @apply -rotate-45;
+  transform: rotate(-45deg);
   transform-origin: left center;
+}
+
+/* Responsive padding adjustments */
+@media (min-width: 1200px) {
+  .navbarContent {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbarContent {
+    padding: 0 50px;
+  }
 }

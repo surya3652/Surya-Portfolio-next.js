@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import styles from './Hero.module.css';
 
 interface HeroImageProps {
   src?: string;
@@ -11,7 +12,7 @@ export default function HeroImage({
   alt = "Hero Image"
 }: HeroImageProps) {
   return (
-    <div className="absolute right-[100px] -bottom-[100px] w-[55%] md:w-[60%] xs:w-full md:right-[150px] xs:right-0">
+    <div className={styles['image-wrapper']}>
       {src && (
         <Image 
           src={src} 

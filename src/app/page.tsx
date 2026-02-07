@@ -28,7 +28,7 @@ export default function Home() {
       {/* Navigation */}
       <Navbar />
       
-      <main>
+      <main style={{ position: 'relative', zIndex: 1 }}>
         {/* Hero Section */}
         <Hero />
         

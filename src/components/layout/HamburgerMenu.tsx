@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./HamburgerMenu.module.css";
@@ -29,21 +29,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  {
-    name: "LinkedIn",
-    url: "#",
-    icon: "bi-linkedin",
-  },
-  {
-    name: "GitHub",
-    url: "#",
-    icon: "bi-github",
-  },
-  {
-    name: "Portfolio",
-    url: "#",
-    icon: "bi-globe",
-  },
+  { name: "LinkedIn", url: "#", icon: "bi-linkedin" },
+  { name: "GitHub", url: "#", icon: "bi-github" },
+  { name: "Portfolio", url: "#", icon: "bi-globe" },
 ];
 
 interface HamburgerMenuProps {
@@ -52,117 +40,115 @@ interface HamburgerMenuProps {
 }
 
 export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
-  // Prevent body scroll when menu is open
+  /* Lock body scroll */
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
-  // Close menu on link click
-  const handleLinkClick = () => {
-    onClose();
-  };
+  /* Close on ESC */
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (isOpen) window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [isOpen, onClose]);
 
   return (
-    <>
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              className={styles.backdrop}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            className={styles.backdrop}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+
+          {/* Menu Panel */}
+          <motion.aside
+            className={styles.menuPanel}
+            variants={menuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              className={styles.closeButton}
               onClick={onClose}
-            />
-
-            {/* Menu Panel */}
-            <motion.div
-              className={styles.menuPanel}
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
+              aria-label="Close menu"
             >
-              {/* Close Button */}
-              <button
-                className={styles.closeButton}
-                onClick={onClose}
-                aria-label="Close menu"
-              >
-                <i className="bi bi-x-lg"></i>
-              </button>
+              <i className="bi bi-x-lg" />
+            </button>
 
-              <div className={styles.menuContent}>
-                {/* Navigation Links */}
-                <nav>
-                  <ul className={styles.menuList}>
-                    {menuItems.map((item, index) => (
-                      <motion.li
-                        key={item.label}
-                        className={styles.menuItem}
-                        variants={menuItemVariants}
+            <div className={styles.menuContent}>
+              {/* Navigation */}
+              <nav>
+                <ul className={styles.menuList}>
+                  {menuItems.map((item) => (
+                    <motion.li
+                      key={item.label}
+                      className={styles.menuItem}
+                      variants={menuItemVariants}
+                    >
+                      <Link
+                        href={item.href}
+                        className={styles.menuLink}
+                        onClick={onClose}
                       >
-                        <Link
-                          href={item.href}
-                          className={styles.menuLink}
-                          onClick={handleLinkClick}
-                        >
-                          {item.label}
-                        </Link>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </nav>
-
-                {/* Contact Information */}
-                <motion.div
-                  className={styles.contactInfo}
-                  variants={menuItemVariants}
-                >
-                  {contactInfo.map((info) => (
-                    <div key={info.title} className={styles.contactBlock}>
-                      <div className={styles.contactTitle}>{info.title}</div>
-                      <div className={styles.divider}></div>
-                      <p className={styles.contactText}>
-                        <a href={info.href}>{info.content}</a>
-                      </p>
-                    </div>
+                        {item.label}
+                      </Link>
+                    </motion.li>
                   ))}
+                </ul>
+              </nav>
 
-                  {/* Social Links */}
-                  <div className={styles.contactBlock}>
-                    <div className={styles.contactTitle}>Follow</div>
-                    <div className={styles.divider}></div>
-                    <div className={styles.socialLinks}>
-                      {socialLinks.map((social) => (
-                        <a
-                          key={social.name}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.socialLink}
-                          aria-label={social.name}
-                        >
-                          <i className={social.icon}></i>
-                        </a>
-                      ))}
-                    </div>
+              {/* Contact */}
+              <motion.div
+                className={styles.contactInfo}
+                variants={menuItemVariants}
+              >
+                {contactInfo.map((info) => (
+                  <div key={info.title} className={styles.contactBlock}>
+                    <div className={styles.contactTitle}>{info.title}</div>
+                    <div className={styles.divider} />
+                    <p className={styles.contactText}>
+                      <a href={info.href}>{info.content}</a>
+                    </p>
                   </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </>
+                ))}
+
+                {/* Social */}
+                <div className={styles.contactBlock}>
+                  <div className={styles.contactTitle}>Follow</div>
+                  <div className={styles.divider} />
+                  <div className={styles.socialLinks}>
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.socialLink}
+                        aria-label={social.name}
+                      >
+                        <i className={`bi ${social.icon}`} />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.aside>
+        </>
+      )}
+    </AnimatePresence>
   );
 }
