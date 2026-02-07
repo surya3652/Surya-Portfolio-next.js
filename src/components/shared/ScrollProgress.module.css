@@ -1,0 +1,13 @@
+/* Scroll Progress Styles */
+
+.scrollTop {
+  transition: opacity 0.3s ease;
+}
+
+.scrollTop:hover {
+  opacity: 0.7;
+}
+
+.scrollPoint {
+  transform-origin: top;
+}

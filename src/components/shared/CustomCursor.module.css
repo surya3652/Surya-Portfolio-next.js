@@ -1,0 +1,47 @@
+.cursorWrapper {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.cursorInner,
+.cursorOuter {
+    position: fixed;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.15s ease-out,
+        height 0.15s ease-out;
+    pointer-events: none;
+}
+
+.cursorInner {
+    width: 8px;
+    height: 8px;
+    background-color: #c2001c;
+    z-index: 100001;
+}
+
+.cursorOuter {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(194, 0, 28, 0.3);
+    z-index: 100000;
+}
+
+.cursorInner.hover {
+    width: 16px;
+    height: 16px;
+}
+
+.cursorOuter.hover {
+    width: 60px;
+    height: 60px;
+}
+
+@media (max-width: 1024px) {
+    .cursorWrapper {
+        display: none;
+    }
+}

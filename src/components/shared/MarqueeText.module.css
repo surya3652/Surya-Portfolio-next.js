@@ -1,0 +1,19 @@
+/* Marquee Text Styles */
+
+.marqueeContent {
+  animation: marquee linear infinite;
+}
+
+.marqueeContent.reverse {
+  animation: marquee linear infinite reverse;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
