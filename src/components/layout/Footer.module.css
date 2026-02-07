@@ -1,0 +1,103 @@
+/* Footer Styles */
+
+.footer {
+  @apply bg-dark-gray text-white py-[80px] relative
+    md:py-[60px];
+}
+
+/* Content */
+.content {
+  @apply grid grid-cols-3 gap-[60px] mb-[60px]
+    lg:gap-[40px]
+    md:grid-cols-1 md:gap-[40px] md:mb-[40px];
+}
+
+/* Brand */
+.brand {
+  @apply space-y-[20px];
+}
+
+.logo {
+  @apply text-[32px] font-bold text-white no-underline inline-block mb-[15px]
+    transition-colors duration-300 hover:text-base-color
+    md:text-[28px];
+}
+
+.description {
+  @apply text-[15px] text-white/70 leading-[1.7] max-w-[300px]
+    md:text-[14px];
+}
+
+.socialLinks {
+  @apply flex gap-[15px];
+}
+
+.socialLink {
+  @apply w-[40px] h-[40px] rounded-full bg-white/10 flex items-center justify-center
+    text-white text-[18px] no-underline transition-all duration-300
+    hover:bg-base-color hover:scale-110;
+}
+
+/* Links Section */
+.linksSection {
+  @apply space-y-[20px];
+}
+
+.linksTitle {
+  @apply text-[18px] font-bold text-white mb-[20px]
+    md:text-[16px];
+}
+
+.linksList {
+  @apply flex flex-col gap-[12px];
+}
+
+.link {
+  @apply text-[15px] text-white/70 no-underline transition-colors duration-300
+    hover:text-base-color hover:pl-[5px]
+    md:text-[14px];
+}
+
+/* Contact Section */
+.contactSection {
+  @apply space-y-[20px];
+}
+
+.contactTitle {
+  @apply text-[18px] font-bold text-white mb-[20px]
+    md:text-[16px];
+}
+
+.contactInfo {
+  @apply flex flex-col gap-[15px];
+}
+
+.contactItem {
+  @apply flex items-center gap-[12px] text-[15px] text-white/70 no-underline
+    transition-colors duration-300 hover:text-base-color
+    md:text-[14px];
+}
+
+.contactItem i {
+  @apply text-[18px] text-base-color;
+}
+
+/* Bottom Bar */
+.bottom {
+  @apply flex justify-between items-center pt-[40px] border-t border-white/10
+    md:flex-col md:gap-[15px] md:text-center md:pt-[30px];
+}
+
+.copyright {
+  @apply text-[14px] text-white/60
+    md:text-[13px];
+}
+
+.credits {
+  @apply text-[14px] text-white/60
+    md:text-[13px];
+}
+
+.heart {
+  @apply text-base-color inline-block mx-[4px];
+}
