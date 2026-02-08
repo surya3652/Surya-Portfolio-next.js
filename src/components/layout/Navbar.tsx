@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -28,6 +29,7 @@ export default function Navbar() {
             <a href="mailto:surya@domain.com" className={styles.email}>
               surya@domain.com
             </a>
+            <ThemeToggle />
             <button
               className={styles.hamburgerButton}
               onClick={toggleMenu}
