@@ -2,9 +2,15 @@
 
 /* Hero Background */
 .hero {
-  background-color: var(--dark-gray);
+  background-color: var(--color-dark);
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding-top: 100px; /* Account for fixed navbar height */
+  }
 }
 
 /* Left floating image */
@@ -61,12 +67,15 @@
 
 .nameOutline span {
   color: transparent;
-  -webkit-text-stroke: 2px var(--base-color);
+  -webkit-text-stroke: 2px #ffffff;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .nameOutline i {
-  color: var(--base-color);
+  color: #ffffff;
+  -webkit-text-stroke: 0;
+  -webkit-text-fill-color: #ffffff;
   font-size: 80px;
   margin-left: 20px;
   vertical-align: top;

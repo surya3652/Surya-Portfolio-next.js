@@ -84,7 +84,7 @@
 }
 
 .closeButton:hover {
-  color: var(--base-color);
+  color: var(--color-primary);
   transform: rotate(90deg);
 }
 
@@ -135,7 +135,7 @@
 }
 
 .menuLink:hover {
-  color: var(--base-color);
+  color: var(--color-primary);
 }
 
 @media (max-width: 1700px) {
@@ -186,7 +186,7 @@
   bottom: -6px;
   width: 0;
   height: 2px;
-  background-color: var(--base-color);
+  background-color: var(--color-primary);
   transition: width 0.3s ease;
 }
 
@@ -242,7 +242,7 @@
 }
 
 .contactText a:hover {
-  color: var(--base-color);
+  color: var(--color-primary);
 }
 
 /* Social */
@@ -260,6 +260,6 @@
 }
 
 .socialLink:hover {
-  color: var(--base-color);
+  color: var(--color-primary);
   transform: scale(1.1);
 }

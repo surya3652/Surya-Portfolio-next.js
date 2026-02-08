@@ -50,7 +50,7 @@
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: var(--base-color);
+  color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
   transition: gap 0.3s ease;

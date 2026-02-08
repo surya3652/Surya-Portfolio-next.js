@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
 import ThemeToggle from "@/components/ui/ThemeToggle";
@@ -8,14 +8,37 @@ import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const heroSection = document.getElementById("home");
+    if (!heroSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show navbar when hero section is in viewport
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.9, // Trigger when at least 10% of hero is visible
+        rootMargin: "0px"
+      }
+    );
+
+    observer.observe(heroSection);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
-      <header className={styles.navbar}>
+      <header className={`${styles.navbar} ${!isVisible ? styles.hidden : ""}`}>
         <div className={styles.navbarContent}>
           {/* Logo */}
           <div className={styles.logoWrapper}>
